@@ -80,8 +80,8 @@ const Header: FC = () => {
   const settings = isAuthenticated && (
     <Li>
       <Link href="/settings">
-        <ALink href="/settings" title="Settings" forButton>
-          <Button height={[32, 40]}>Settings</Button>
+        <ALink href="/settings" title="Settings" fontSize={[14, 16]}>
+          Settings
         </ALink>
       </Link>
     </Li>
@@ -145,8 +145,8 @@ const Header: FC = () => {
         as="ul"
         style={{ listStyle: "none" }}
       >
-        {logout}
         {settings}
+        {logout}
         {login}
       </RowCenterV>
     </Flex>
