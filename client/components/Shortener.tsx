@@ -72,7 +72,7 @@ const Shortener = () => {
   const [formState, { raw, password, text, select, label }] = useFormState<
     Form
   >(
-    { showAdvanced: false },
+    { showAdvanced: true },
     {
       withIds: true,
       onChange(e, stateValues, nextStateValues) {
@@ -130,7 +130,7 @@ const Shortener = () => {
 
   const title = !link && (
     <H1 fontSize={[25, 27, 32]} light>
-      Kutt your links{" "}
+      Make your links{" "}
       <Span style={{ borderBottom: "2px dotted #999" }} light>
         shorter
       </Span>
