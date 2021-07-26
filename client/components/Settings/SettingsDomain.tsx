@@ -78,7 +78,7 @@ const SettingsDomain: FC = () => {
         <b>example.com/shorturl.</b>
       </Text>
       <Text mb={4}>
-        Point your domain A record to <b>192.64.116.170</b> then add the domain
+        Point your domain A record to <b>XXX.XXX.XXX.XXX</b> then add the domain
         via form below:
       </Text>
       {domains.length > 0 && (
