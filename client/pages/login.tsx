@@ -120,7 +120,7 @@ const LoginPage = () => {
               autoFocus
             />
             <Text {...label("password")} as="label" mb={2} bold>
-              Password{!DISALLOW_REGISTRATION ? " (min chars: 8)" : ""}:
+              Password:
             </Text>
             <TextInput
               {...password("password")}
