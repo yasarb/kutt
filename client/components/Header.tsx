@@ -80,8 +80,8 @@ const Header: FC = () => {
   const settings = isAuthenticated && (
     <Li>
       <Link href="/settings">
-        <ALink href="/settings" title="Settings" forButton>
-          <Button height={[32, 40]}>Settings</Button>
+        <ALink href="/settings" title="Settings" fontSize={[14, 16]}>
+          Settings
         </ALink>
       </Link>
     </Li>
@@ -126,7 +126,7 @@ const Header: FC = () => {
           >
             <Li>
               <ALink
-                href="//github.com/thedevs-network/kutt"
+                href="//github.com/yasarb/kutt"
                 target="_blank"
                 rel="noopener noreferrer"
                 title="GitHub"
@@ -135,36 +135,9 @@ const Header: FC = () => {
                 GitHub
               </ALink>
             </Li>
-            <Li>
-              <Link href="/report">
-                <ALink href="/report" title="Report abuse" fontSize={[14, 16]}>
-                  Report
-                </ALink>
-              </Link>
-            </Li>
           </Flex>
         )}
       </Flex>
-      <RowCenterV
-        m={0}
-        p={0}
-        justifyContent="flex-end"
-        as="ul"
-        style={{ listStyle: "none" }}
-      >
-        <Li>
-          <Flex display={["flex", "none"]}>
-            <Link href="/report">
-              <ALink href="/report" title="Report" fontSize={[14, 16]}>
-                Report
-              </ALink>
-            </Link>
-          </Flex>
-        </Li>
-        {logout}
-        {settings}
-        {login}
-      </RowCenterV>
     </Flex>
   );
 };
