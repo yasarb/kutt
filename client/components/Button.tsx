@@ -26,10 +26,10 @@ export const Button = styled(Flex)<Props>`
     gray: "#444"
   })};
   background: ${switchProp(prop("color", "blue"), {
-    blue: "linear-gradient(to right, #42a5f5, #2979ff)",
-    red: "linear-gradient(to right, #ee3b3b, #e11c1c)",
-    purple: "linear-gradient(to right, #7e57c2, #6200ea)",
-    gray: "linear-gradient(to right, #e0e0e0, #bdbdbd)"
+    blue: "linear-gradient(to right, #2979ff, #2979ff)",
+    red: "linear-gradient(to right, #e11c1c, #e11c1c)",
+    purple: "linear-gradient(to right, #6200ea, #6200ea)",
+    gray: "linear-gradient(to right, #bdbdbd, #bdbdbd)"
   })};
   box-shadow: ${switchProp(prop("color", "blue"), {
     blue: "0 5px 6px rgba(66, 165, 245, 0.5)",
