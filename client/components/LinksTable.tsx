@@ -187,30 +187,6 @@ const Row: FC<RowProps> = ({ index, link, setDeleteModal }) => {
   return (
     <>
       <Tr key={link.id}>
-        <Td {...ogLinkFlex} withFade>
-          <Col alignItems="flex-start">
-            <ALink href={link.target}>{link.target}</ALink>
-            {link.description && (
-              <Text fontSize={[13, 14]} color="#888">
-                {link.description}
-              </Text>
-            )}
-          </Col>
-        </Td>
-        <Td {...createdFlex} flexDirection="column" alignItems="flex-start">
-          <Text>{formatDistanceToNow(new Date(link.created_at))} ago</Text>
-          {link.expire_in && (
-            <Text fontSize={[13, 14]} color="#888">
-              Expires in{" "}
-              {ms(
-                differenceInMilliseconds(new Date(link.expire_in), new Date()),
-                {
-                  long: true
-                }
-              )}
-            </Text>
-          )}
-        </Td>
         <Td {...shortLinkFlex} withFade>
           {copied ? (
             <Animation
@@ -243,6 +219,30 @@ const Row: FC<RowProps> = ({ index, link, setDeleteModal }) => {
             </Animation>
           )}
           <ALink href={link.link}>{removeProtocol(link.link)}</ALink>
+        </Td>
+        <Td {...ogLinkFlex} withFade>
+          <Col alignItems="flex-start">
+            <ALink href={link.target}>{link.target}</ALink>
+            {link.description && (
+              <Text fontSize={[13, 14]} color="#888">
+                {link.description}
+              </Text>
+            )}
+          </Col>
+        </Td>
+        <Td {...createdFlex} flexDirection="column" alignItems="flex-start">
+          <Text>{formatDistanceToNow(new Date(link.created_at))} ago</Text>
+          {link.expire_in && (
+            <Text fontSize={[13, 14]} color="#888">
+              Expires in{" "}
+              {ms(
+                differenceInMilliseconds(new Date(link.expire_in), new Date()),
+                {
+                  long: true
+                }
+              )}
+            </Text>
+          )}
         </Td>
         <Td {...viewsFlex}>{withComma(link.visit_count)}</Td>
         <Td {...actionsFlex} justifyContent="flex-end">
@@ -647,9 +647,9 @@ const LinksTable: FC = () => {
             {Nav}
           </Tr>
           <Tr>
+            <Th {...shortLinkFlex}>Short URL</Th>
             <Th {...ogLinkFlex}>Original URL</Th>
             <Th {...createdFlex}>Created</Th>
-            <Th {...shortLinkFlex}>Short URL</Th>
             <Th {...viewsFlex}>Views</Th>
             <Th {...actionsFlex}></Th>
           </Tr>
